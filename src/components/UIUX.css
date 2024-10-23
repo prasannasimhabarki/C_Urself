@@ -1,0 +1,116 @@
+.uiux-page {
+    position: relative;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.uiux-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Assets/Games/ui3.gif'); /* Update to correct UI/UX background */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Adjust the opacity if needed */
+    z-index: -1; /* Keep the background behind the content */
+}
+.uiux-page .section{
+    margin-top: 40px;
+}
+
+/* Other styles for the content */
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.section-right {
+    flex-direction: row-reverse; /* Text on the right, image on the left */
+}
+
+.section-center {
+    flex-direction: column; /* Center text and image for the middle section */
+    text-align: center;
+}
+
+.section-left {
+    flex-direction: row; /* Text on the left, image on the right */
+}
+
+.major-text {
+    max-width: 800px;
+    text-align: justify;
+    color: #111111;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.card-container-left,
+.card-container-right,
+.card-container-center {
+    max-width: 300px;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar styling inherited from landing page */
+.navbar {
+    background-color: #000;
+    color: #fff;
+    padding: 1px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+.section-right .major-text-1 {
+    animation: slide-in-right 1s ease-out;
+}
+
+.section-left .major-text-3 {
+    animation: slide-in-left 1s ease-out;
+}
+
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
